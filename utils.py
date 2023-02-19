@@ -1,9 +1,12 @@
 import argparse
+import logging
 import typing as t
 
 import matplotlib.pyplot as plt
 import numpy as np
 import taichi as ti
+
+logging.getLogger().setLevel(logging.INFO)
 
 
 def plot_losses(

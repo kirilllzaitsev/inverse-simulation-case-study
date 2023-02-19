@@ -2,16 +2,16 @@ import sys
 from time import sleep
 
 import taichi as ti
-from utils import parse_common_sim_args, plot_losses
+from utils import logging, parse_common_sim_args, plot_losses
 
 ti.init(arch=ti.cpu, debug=True, flatten_if=True, verbose=False)
 
-from taichi import _logging as logging
+from taichi import _logging as ti_logging
 
 args = parse_common_sim_args()
 
 if not args.info:
-    logging.set_logging_level(ti.WARN)
+    ti_logging.set_logging_level(ti.WARN)
 if not args.trace:
     sys.tracebacklimit = 0
 
@@ -99,6 +99,7 @@ def forward(do_visualize=False):
             visualize(t)
 
         if n_sequential_contacts[None] > 50.0:
+            logging.warning(
                 "Stop simulation. n_sequential_contacts[None]=",
                 n_sequential_contacts[None],
             )

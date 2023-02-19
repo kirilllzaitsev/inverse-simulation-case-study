@@ -1,4 +1,3 @@
-
 import taichi as ti
 from utils import copy, parse_common_sim_args, plot_losses
 
