@@ -1,10 +1,10 @@
 run-particle:
 	@echo "Optimizing for a particle in 3D"
-	python optimizing_ball.py --trace -do -dv -ss 500 -os 20 -dp
+	python optimizing_particle.py --trace -do -dv -ss 500 -os 20 -dp
 
 run-particle-penalty-based-collision:
 	@echo "Optimizing for a particle with a penalty based collision model"
-	python optimizing_ball.py --trace -do -dv -ss 500 -os 20 -dp
+	python optimizing_particle_penalty_based.py --trace -do -dv -ss 500 -os 20 -dp
 
 run-soft-2d:
 	@echo "Optimizing for a soft body in 2D"
